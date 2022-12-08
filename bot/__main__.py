@@ -500,7 +500,10 @@ def main():
     LOGGER.info("💥𝐁𝐨𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝❗")
     signal(SIGINT, exit_clean_up)
 
-app.start()
-main()
-
-main_loop.run_forever()
+try:
+  app.start()
+  main()
+  main_loop.run_forever()
+except Exception as e:
+  print(e)
+  pass
